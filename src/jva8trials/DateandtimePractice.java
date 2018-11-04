@@ -10,6 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -123,6 +124,15 @@ public class DateandtimePractice {
                       .reduce((a,b) -> a + "," +b).orElse("ok");
       
       System.out.println(result);
+     // DateTimeFormatter dateFormat=DateTimeFormatter.ISO_DATE;
+     // LocalDate dateOfBirth= LocalDate.of(2015,Month.FEBRUARY,31);
+     // System.out.println(dateFormat.format(dateOfBirth));
+      
+      ZoneId zoneId=ZoneId.of("Asia/Singapore");
+      //ZonedDateTime.of(LocalDateTime.now(),zoneId);
+      System.out.println(ZonedDateTime.of(LocalDateTime.now(),zoneId));
+      DateTimeFormatter formatter=DateTimeFormatter.ofPattern("EEEE",Locale.US);
+      System.out.println(formatter.format(LocalDateTime.now()));
       
      
 }
